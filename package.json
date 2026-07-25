@@ -12,6 +12,7 @@
     "verify": "NEXT_DIST_DIR=.next-verify next build"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^11.15.0",
     "geist": "^1.3.1",
     "next": "^15.1.6",

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { profile } from '@/data/profile'
@@ -65,7 +66,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="bg-bg text-text antialiased">{children}</body>
+      <body className="bg-bg text-text antialiased">
+        {children}
+        {/*
+          Vercel Analytics. Cookieless and aggregate-only, so it needs no
+          consent banner under GDPR — which is the whole reason it's acceptable
+          on a site that makes a point of not tracking anyone.
+
+          It only reports from a Vercel deployment; locally it's a no-op, so
+          your own dev traffic never shows up in the numbers.
+        */}
+        <Analytics />
+      </body>
     </html>
   )
 }

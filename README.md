@@ -152,6 +152,24 @@ while the file is missing, so the site is deployable before the CV exists.
 Strip your home address and phone number first — the folder is public and gets
 scraped.
 
+## Analytics
+
+[Vercel Web Analytics](https://vercel.com/docs/analytics), mounted once in
+`app/layout.tsx`. Cookieless and aggregate-only, so it needs no consent banner
+under GDPR.
+
+- **Only reports from a Vercel deployment.** Locally it runs in debug mode and
+  sends nothing, so your own dev traffic never pollutes the numbers.
+- **Enable it in the Vercel dashboard** (Project → Analytics) after the first
+  deploy — the component alone does nothing until you do.
+- **Adds 0 kB to the bundle.** The script loads async from Vercel's CDN;
+  First Load JS is unchanged at 165 kB.
+- **Sector navigation does not fire pageviews.** `DeepLink` updates only the
+  URL hash via `replaceState`, and the Next.js integration tracks pathname and
+  search params — not the fragment. Verified: flying between all four sectors
+  and opening a project produced zero extra view events, so panning the canvas
+  can't inflate your counts or burn the Hobby quota.
+
 ## Other content
 
 | What | Where |
