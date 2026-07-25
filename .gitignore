@@ -18,3 +18,11 @@ yarn-error.log*
 next-env.d.ts
 tsconfig.tsbuildinfo
 .next-verify
+
+# Screenshot originals. `npm run shots` converts these to .webp, which is what
+# the site actually serves — committing multi-megabyte PNGs alongside would
+# bloat the repo permanently, since git history keeps them even after deletion.
+# Keep the originals locally so the optimizer can be re-run.
+public/shots/*.png
+public/shots/*.jpg
+public/shots/*.jpeg

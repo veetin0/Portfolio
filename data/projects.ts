@@ -42,6 +42,7 @@ export const projects: Project[] = [
       { label: 'lyvo-web.vercel.app', href: 'https://lyvo-web.vercel.app', kind: 'demo' },
       { label: 'veetin0/lyvo-web', href: 'https://github.com/veetin0/lyvo-web', kind: 'github' },
     ],
+    media: [{ src: '/shots/lyvo.webp', alt: 'Lyvo home screen' }],
   },
 
   {
@@ -97,6 +98,7 @@ export const projects: Project[] = [
           'MIT covers my code. The 237 bundled flags are from flag-icons (MIT, © Panayiotis Lipiridis) and the country geometry is Natural Earth (public domain) — see THIRD-PARTY-NOTICES.md in the archive, and keep it with any copy you pass on.',
       },
     ],
+    media: [{ src: '/shots/FunWithFlags.webp', alt: 'Interactive world map engineered for smoothness' }],
   },
 
   {
@@ -169,6 +171,7 @@ export const projects: Project[] = [
           'Ships as source, not a signed binary. Command Center runs shell commands and AppleScript you configure, so it is deliberately unsandboxed — build it yourself and you can read exactly what it does first.',
       },
     ],
+    media: [{ src: '/shots/CommandCenter.webp', alt: 'Command Center home screen' }],
   },
 
   {

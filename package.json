@@ -9,7 +9,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "portrait": "node scripts/process-portrait.mjs",
-    "verify": "NEXT_DIST_DIR=.next-verify next build"
+    "verify": "NEXT_DIST_DIR=.next-verify next build",
+    "shots": "node scripts/optimize-shots.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
