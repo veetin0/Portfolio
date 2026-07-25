@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 8 9 10;
+    --raised: 15 17 18;
+    --line: 30 34 36;
+    --text: 236 238 234;
+    --muted: 122 128 133;
+    --dim: 74 80 84;
+    --signal: 198 242 78;
+
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: rgb(var(--line));
+  }
+
+  html,
+  body {
+    height: 100%;
+    overscroll-behavior: none;
+  }
+
+  body {
+    background: rgb(var(--bg));
+    color: rgb(var(--text));
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(var(--signal) / 0.85);
+    color: rgb(var(--bg));
+  }
+
+  :focus-visible {
+    outline: 1px solid rgb(var(--signal));
+    outline-offset: 3px;
+  }
+
+  /* Thin, dark, unobtrusive. */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--line));
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--dim));
+  }
+}
+
+@layer components {
+  /* Small uppercase metadata label — the site's connective tissue. */
+  .eyebrow {
+    @apply font-mono text-2xs uppercase tracking-widest text-dim;
+  }
+
+  /* Frosted surface used by every floating element, so they read as one system. */
+  .pane {
+    background: rgb(var(--raised) / 0.82);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgb(var(--line));
+    box-shadow:
+      0 1px 0 0 rgb(255 255 255 / 0.03) inset,
+      0 24px 60px -20px rgb(0 0 0 / 0.7);
+  }
+
+  .hairline {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(var(--line)) 12%,
+      rgb(var(--line)) 88%,
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Promote to its own layer once, rather than per-frame. */
+  .gpu {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Fades the tail of a scroll region so cut-off text reads as "more below"
+     rather than as a rendering glitch. Bottom only — fading the top would
+     dim the heading you just opened. */
+  .mask-b {
+    mask-image: linear-gradient(to bottom, black 88%, transparent);
+  }
+}
+
+/* The server-rendered fallback exists for crawlers and no-JS visitors. When JS
+   is available the interactive shell replaces it, so hide it before paint
+   rather than letting it flash. */
+html[data-js='1'] .static-fallback {
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Honour the OS setting: kill motion, keep every state change legible. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
