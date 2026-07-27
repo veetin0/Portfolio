@@ -211,7 +211,7 @@ export const projects: Project[] = [
     attribution:
       'A team of six, with roughly equal contribution across the group — the commit history shows only two names because we pushed from shared machines. My own work was the search for good controller values: ML to explore the parameter space, narrowing it to the ranges worth testing, plus research and helpers the rest of the team built on. The EnergyPlus model, weather data and controller scaffolding were supplied by Koja.',
     summary:
-      'A two-day competition run by Koja: control the heating and ventilation of a simulated five-zone office and get the lowest total cost, where cost is energy plus penalties for letting the temperature drift or the CO₂ climb. Three objectives that actively fight each other — the cheapest building is the one nobody can work in.',
+      'A one-day competition run by Koja: control the heating and ventilation of a simulated five-zone office and get the lowest total cost, where cost is energy plus penalties for letting the temperature drift or the CO₂ climb. Three objectives that actively fight each other — the cheapest building is the one nobody can work in.',
     features: [
       'Three controllers compared against one EnergyPlus building model: ventilation always-on, a scheduled rule-based controller, and a reinforcement-learning agent',
       'Rule-based controller doing CO₂-demand flow control, return-air compensation and outdoor-temperature-driven zone setpoints',

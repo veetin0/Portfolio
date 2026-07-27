@@ -5,7 +5,7 @@
 export const profile = {
   name: 'Veeti Nurmikoski',
   handle: 'veeti',
-  role: 'Computer Science Student',
+  role: 'Third-year Computer Science Student',
   location: 'Finland',
   timezone: 'Europe/Helsinki',
 
