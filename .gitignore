@@ -26,3 +26,4 @@ tsconfig.tsbuildinfo
 public/shots/*.png
 public/shots/*.jpg
 public/shots/*.jpeg
+.env*
