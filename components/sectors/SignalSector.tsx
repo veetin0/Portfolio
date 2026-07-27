@@ -17,7 +17,7 @@ export function SignalSector({ stacked = false }: { stacked?: boolean }) {
     // centred on its world point, that padding lifts the real content by half
     // of it, so the last line clears the rail. Only this sector is tall enough
     // to need it.
-    <div className={stacked ? 'w-full' : 'w-[760px] pb-14'}>
+    <div className={stacked ? 'w-full' : 'w-[820px] pb-14'}>
       <SectorMark ord="03" label="Signal" />
 
       {/* Identity header: the face, then the log. Reads as a personnel record,
@@ -55,7 +55,7 @@ export function SignalSector({ stacked = false }: { stacked?: boolean }) {
       {/* Boot log. Each entry is a line in the system's history. */}
       <ol className="mt-8 space-y-0">
         {profile.log.map((entry, i) => (
-          <li key={i} className="group relative flex gap-5 pb-4 last:pb-0">
+          <li key={i} className="group relative flex gap-5 pb-3 last:pb-0">
             {/* Runs through the dots: 56px date column + 20px gap + half a
                 6px dot. */}
             <span

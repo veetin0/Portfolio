@@ -19,6 +19,7 @@ export const profile = {
     'interface obsessive',
     'ships weekend projects',
     'machine learning tinkerer',
+    'builds with LLMs in the loop',
     'automates the boring parts',
     'runs his own DNS',
   ],
@@ -67,7 +68,10 @@ export const profile = {
       at: '2025',
       text: 'Second year. Made ML and AI the main line: agents are going to decide a great deal, and I would rather build them than watch.',
     },
-    { at: '2025', text: 'Stopped waiting for coursework and started shipping projects of my own.' },
+    {
+      at: '2025',
+      text: 'Stopped waiting for coursework and started shipping my own projects — increasingly with an LLM in the loop, reviewing and verifying its output rather than trusting it.',
+    },
     {
       at: '2026',
       text: 'Third place at the Koja Hackathon, with a team — HVAC control for a building simulated in EnergyPlus. My first hackathon.',
