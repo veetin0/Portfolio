@@ -15,13 +15,13 @@ import { SITE_URL } from '@/lib/site'
  * the other; they are two copies of one document.
  */
 
-const UPDATED = '28 July 2026'
+const UPDATED = '30 July 2026'
 const CANONICAL = `${SITE_URL}/gymplus/privacy`
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — Gym+',
   description:
-    'Gym+ stores your training data on your device and sends it nowhere. No account, no analytics, no network requests.',
+    'Gym+ stores your training data on your device and sends it nowhere. No account, no analytics, no sync.',
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: 'Privacy Policy — Gym+',
@@ -87,6 +87,7 @@ export default function GymPlusPrivacyPage() {
             'Exercises you create yourself, and exercises you mark as favourites',
             'Profile details you choose to enter: a name, bodyweight, height and training goal',
             'Settings: units, bar weight, plate increment, default rest time',
+            'The date the app last asked you to rate it, so that it stops asking',
           ]}
         />
         <p className="pt-1">
@@ -111,15 +112,37 @@ export default function GymPlusPrivacyPage() {
 
       <Section title="Network access">
         <p>
-          Gym+ makes no network requests at all. It does not contact any server — not the
-          developer&rsquo;s, not a third party&rsquo;s, not for updates, analytics or crash reports.
-          The app works identically with the device offline, because being offline makes no
-          difference to it.
+          Gym+ makes no network requests of its own. It does not contact the developer&rsquo;s
+          server, or anyone else&rsquo;s, for analytics, crash reports, updates or sync. There is no
+          server holding your training history. Everything the app does with your data works
+          identically with the device offline.
         </p>
+        <p>There is one exception, described next.</p>
         <p>
           If you inspect the app&rsquo;s permissions on Android you will see internet access listed.
-          That is declared by the framework the app is built on, not requested by Gym+, and nothing
-          in the app uses it. Over-the-air code updates are disabled.
+          That is declared by the framework the app is built on rather than requested by Gym+.
+          Over-the-air code updates are disabled.
+        </p>
+      </Section>
+
+      <Section title="Asking you to rate the app">
+        <p>
+          After you have used Gym+ for a while, it may ask once whether you would like to rate it.
+          The rating sheet is provided by Google Play or the App Store and displayed by your device
+          — it is not part of Gym+, and the app cannot see what you write or whether you submit
+          anything at all.
+        </p>
+        <p>
+          Showing it means your device contacts the store at that moment. That is the only time
+          anything leaves your phone, and{' '}
+          <strong className="font-medium text-text">none of your training data is involved</strong>:
+          no workouts, no weights, no profile details are sent, because the app has nothing to do
+          with the request beyond asking for the sheet.
+        </p>
+        <p>
+          The app records the date it asked, on your device, so that it stops asking. It asks at
+          most twice, months apart, and you can dismiss it. Your device&rsquo;s own settings also
+          limit how often any app may ask.
         </p>
       </Section>
 

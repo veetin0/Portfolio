@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       // Submitted to Google Play as the app's privacy policy. Low priority for
       // ranking, but it must stay crawlable — Play re-checks the URL.
       url: `${SITE_URL}/gymplus/privacy`,
-      lastModified: new Date('2026-07-28'),
+      lastModified: new Date('2026-07-30'),
       changeFrequency: 'yearly',
       priority: 0.3,
     },

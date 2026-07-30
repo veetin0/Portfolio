@@ -246,7 +246,7 @@ export const projects: Project[] = [
     status: 'prototype',
     weight: 1.05,
     summary:
-      'A React Native training app: answer three questions about your goal, experience and how many days you can train, and it builds an eight-week program you can actually run. Logging, progression and progress charts all work offline — the app makes no network calls at all.',
+      'A React Native training app: answer three questions about your goal, experience and how many days you can train, and it builds an eight-week program you can actually run. Logging, progression and progress charts all work offline — the app makes no network calls of its own.',
     features: [
       'Program generator builds an 8-week block from goal × days-per-week, with sets, reps and rest tuned per goal (5×5 at 3min for strength, 3×15 at 60s for fat loss)',
       'Local exercise database of 180 movements tagged by muscle, equipment, difficulty, secondary muscles and cues',
@@ -254,13 +254,13 @@ export const projects: Project[] = [
       'Estimated 1RM via the Epley formula, session volume, and weekly volume broken down by muscle group',
       'Progression suggestions — hit the target reps and it proposes the next load',
       'Everything persists to AsyncStorage, with JSON backup export and re-import so the data is yours',
-      'No accounts, no sync, no network requests',
+      'No accounts, no sync, no analytics — the only thing that ever leaves the phone is the store’s own rating sheet',
     ],
     stack: ['React Native', 'Expo', 'JavaScript', 'React'],
     metrics: [
       { label: 'Exercises', value: '180' },
-      { label: 'Templates', value: '8' },
-      { label: 'Network', value: 'none' },
+      { label: 'Templates', value: '9' },
+      { label: 'Accounts', value: 'none' },
     ],
   },
 
